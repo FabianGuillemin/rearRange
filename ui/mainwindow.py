@@ -95,6 +95,13 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        MainWindow.setTabOrder(self.lineEditSeparator, self.spinBoxSection)
+        MainWindow.setTabOrder(self.spinBoxSection, self.checkBoxDouble)
+        MainWindow.setTabOrder(self.checkBoxDouble, self.checkBoxSafeFile)
+        MainWindow.setTabOrder(self.checkBoxSafeFile, self.sortedButton)
+        MainWindow.setTabOrder(self.sortedButton, self.resetButton)
+        MainWindow.setTabOrder(self.resetButton, self.plainTextInput)
+        MainWindow.setTabOrder(self.plainTextInput, self.plainTextOutput)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

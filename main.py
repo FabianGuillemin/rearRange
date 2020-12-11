@@ -1,6 +1,6 @@
 import sys
 import csv
-from qtpy import QtWidgets
+from qtpy import QtWidgets, QtGui
 
 from ui.mainwindow import Ui_MainWindow
 from ui.dialogdefaultvalues import Ui_Dialog
@@ -8,8 +8,6 @@ from ui.dialoginfo import Ui_Dialog as Ui_DialogInfo
 
 app = QtWidgets.QApplication(sys.argv)
 
-#TODO - Tab-Reihenfolge definieren
-#TODO - Icon und Bezeichnung festlegen
 
 #InfoFenster
 class DialogInfo(QtWidgets.QDialog):
@@ -19,6 +17,7 @@ class DialogInfo(QtWidgets.QDialog):
         self.uiD = Ui_DialogInfo()
         self.uiD.setupUi(self)
         self.setWindowTitle("Info")
+        self.setWindowIcon(QtGui.QIcon("ui/icon.png"))
 
 #StandardwertFenster
 class DialogDefaultValues(QtWidgets.QDialog):
@@ -29,6 +28,7 @@ class DialogDefaultValues(QtWidgets.QDialog):
         self.uiD.setupUi(self)
 
         self.setWindowTitle("Standardwerte festlegen")
+        self.setWindowIcon(QtGui.QIcon("ui/icon.png"))
         dict = self.readDefaultFile()
         self.uiD.lineEditSeparator.setText(dict["separator"])
         self.uiD.spinBoxSection.setValue(int(dict["section"]))
@@ -70,7 +70,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.setWindowTitle("Hilfsprogramm - Artikel/Werte umsortieren")
+        self.setWindowTitle("rearRange")
+        self.setWindowIcon(QtGui.QIcon("ui/icon.png"))
         self.ui.plainTextOutput.hide()
         self.ui.labelOutput.hide()
 

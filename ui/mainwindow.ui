@@ -151,6 +151,16 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>lineEditSeparator</tabstop>
+  <tabstop>spinBoxSection</tabstop>
+  <tabstop>checkBoxDouble</tabstop>
+  <tabstop>checkBoxSafeFile</tabstop>
+  <tabstop>sortedButton</tabstop>
+  <tabstop>resetButton</tabstop>
+  <tabstop>plainTextInput</tabstop>
+  <tabstop>plainTextOutput</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
