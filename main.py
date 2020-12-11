@@ -17,7 +17,7 @@ class DialogInfo(QtWidgets.QDialog):
         self.uiD = Ui_DialogInfo()
         self.uiD.setupUi(self)
         self.setWindowTitle("Info")
-        self.setWindowIcon(QtGui.QIcon("ui/icon.png"))
+        self.setWindowIcon(QtGui.QIcon("icon.png"))
 
 #StandardwertFenster
 class DialogDefaultValues(QtWidgets.QDialog):
@@ -28,7 +28,7 @@ class DialogDefaultValues(QtWidgets.QDialog):
         self.uiD.setupUi(self)
 
         self.setWindowTitle("Standardwerte festlegen")
-        self.setWindowIcon(QtGui.QIcon("ui/icon.png"))
+        self.setWindowIcon(QtGui.QIcon("icon.png"))
         dict = self.readDefaultFile()
         self.uiD.lineEditSeparator.setText(dict["separator"])
         self.uiD.spinBoxSection.setValue(int(dict["section"]))
@@ -71,7 +71,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
 
         self.setWindowTitle("rearRange")
-        self.setWindowIcon(QtGui.QIcon("ui/icon.png"))
+        self.setWindowIcon(QtGui.QIcon("icon.png"))
         self.ui.plainTextOutput.hide()
         self.ui.labelOutput.hide()
 
@@ -171,7 +171,7 @@ class MainWindow(QtWidgets.QMainWindow):
         return sitemlist
 
     def saveFile(self):
-        path = self.readDefaultFile()["path"] + "OutputFile_Hilfsprogramm.txt"
+        path = self.readDefaultFile()["path"] + "rearRangeOutputFile.txt"
         if self.ui.checkBoxDouble.checkState() == 0:
             self.ui.plainTextOutput.insertPlainText("Datei erfolgreich gespeichert unter:\n" + path + "\n\n")
             with open(path, "w", newline='', encoding="UTF-8") as file:
